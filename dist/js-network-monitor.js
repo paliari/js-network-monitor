@@ -69,12 +69,14 @@ JsNetworkMonitor = (function() {
   };
 
   JsNetworkMonitor.prototype._checkEnd = function(status) {
-    if (this.status && status !== this.status) {
+    var changed;
+    changed = status !== this.status;
+    this.status = status;
+    if (this.status && changed) {
       if (this._events[status]) {
-        this._events[status]();
+        return this._events[status]();
       }
     }
-    return this.status = status;
   };
 
   return JsNetworkMonitor;
