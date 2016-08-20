@@ -4,14 +4,14 @@ var JsNetworkMonitor;
 JsNetworkMonitor = (function() {
   function JsNetworkMonitor(options) {
     var k;
-    this.options = {
+    this._options = {
       url: '/favicon.ico',
       timeout: 3000,
       sleep_delay: 5000
     };
     if (options) {
       for (k in options) {
-        this.options[k] = options[k];
+        this._options[k] = options[k];
       }
     }
     this._events = {};
