@@ -1,0 +1,23 @@
+{
+  "name": "js-network-monitor",
+  "description": "",
+  "main": "dist/js-network-monitor.js",
+  "authors": [
+    "Marcos Paliari"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "js-network-monitor",
+    "js",
+    "network",
+    "monitor"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
