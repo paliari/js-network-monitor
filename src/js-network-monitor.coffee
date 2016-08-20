@@ -32,6 +32,7 @@ class JsNetworkMonitor
     @xhttp.send()
 
   _checkEnd: (status) ->
-    if @status and status != @status
-      @_events[status]() if @_events[status]
+    changed = status != @status
     @status = status
+    if @status and changed
+      @_events[status]() if @_events[status]
