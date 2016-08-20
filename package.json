@@ -1,0 +1,19 @@
+{
+  "name": "js-network-monitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/js-network-monitor.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "pro": "webpack -p"
+  },
+  "keywords": [
+    "js-network-monitor",
+    "js",
+    "network",
+    "monitor"
+  ],
+  "author": "Marcos Paliari",
+  "license": "MIT"
+}
