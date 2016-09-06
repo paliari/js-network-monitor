@@ -1,3 +1,4 @@
+'use strict'
 (->
   class JsNetworkMonitor
     constructor: (options) ->
@@ -44,4 +45,4 @@
     @JsNetworkMonitor = JsNetworkMonitor
   return
 
-).call()
+).call(this)
