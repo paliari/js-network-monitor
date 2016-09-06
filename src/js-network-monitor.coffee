@@ -45,4 +45,4 @@
     @JsNetworkMonitor = JsNetworkMonitor
   return
 
-).call(this)
+).call(@)
