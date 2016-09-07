@@ -16,6 +16,7 @@
         }
       }
       this._events = {};
+      this.status = '';
     }
 
     JsNetworkMonitor.prototype.start = function() {
