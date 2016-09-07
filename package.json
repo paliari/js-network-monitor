@@ -1,6 +1,6 @@
 {
   "name": "js-network-monitor",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "dist/js-network-monitor.js",
   "scripts": {
