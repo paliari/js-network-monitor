@@ -26,8 +26,9 @@
       @xhttp = new XMLHttpRequest()
       @xhttp.timeout = @_options.timeout
       @xhttp.onload = => @_checkEnd 'online'
-      @xhttp.onerror = => @_checkEnd 'offline'
-      @xhttp.ontimeout = => @_checkEnd 'offline'
+      @xhttp.onerror = @xhttp.ontimeout = => @_checkEnd 'offline'
+      addEventListener('offline', @xhttp.onerror, no) if typeof addEventListener == 'function'
+      @xhttp
 
     _check: ->
       @xhttp.open 'OPTIONS', "#{@_options.url}?t=#{Date.now()}"
@@ -38,6 +39,7 @@
       @status = status
       if @status and changed
         @_events[status]() if @_events[status]
+      return
 
   if typeof module != 'undefined' and typeof module.exports != 'undefined'
     module.exports = JsNetworkMonitor
@@ -45,4 +47,4 @@
     @JsNetworkMonitor = JsNetworkMonitor
   return
 
-).call(@)
+).call(this)

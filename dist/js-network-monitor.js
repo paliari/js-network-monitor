@@ -52,16 +52,15 @@
           return _this._checkEnd('online');
         };
       })(this);
-      this.xhttp.onerror = (function(_this) {
+      this.xhttp.onerror = this.xhttp.ontimeout = (function(_this) {
         return function() {
           return _this._checkEnd('offline');
         };
       })(this);
-      return this.xhttp.ontimeout = (function(_this) {
-        return function() {
-          return _this._checkEnd('offline');
-        };
-      })(this);
+      if (typeof addEventListener === 'function') {
+        addEventListener('offline', this.xhttp.onerror, false);
+      }
+      return this.xhttp;
     };
 
     JsNetworkMonitor.prototype._check = function() {
@@ -75,7 +74,7 @@
       this.status = status;
       if (this.status && changed) {
         if (this._events[status]) {
-          return this._events[status]();
+          this._events[status]();
         }
       }
     };
